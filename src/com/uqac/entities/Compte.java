@@ -1,47 +1,60 @@
 package com.uqac.entities;
 
+import java.sql.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Compte {
-	private int code;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long code;
 	private double solde;
+	private Date date_creation;
+	@OneToOne(targetEntity=Client.class,optional=false)
+	private Client client;
 	
-	public void verser(double mt){
-		 solde +=mt;
-		
-	}
-	
-	public void retirer(double mt){
-		 solde-=mt;
-	}
-
-	public Compte(int code, double solde) {
-		super();
-		this.code = code;
-		this.solde = solde;
-	}
-
 	public Compte() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getCode() {
+	public Long getCode() {
 		return code;
+	}
+
+	public void setCode(Long code) {
+		this.code = code;
 	}
 
 	public double getSolde() {
 		return solde;
 	}
-	
-	public void setCode(int i){
-		code =i;
+
+	public void setSolde(double solde) {
+		this.solde = solde;
 	}
 
-	public String toString() {
-		return "Compte [code=" + code + ", solde=" + solde + "]";
+	public Date getDate_creation() {
+		return date_creation;
 	}
 
-	
-	
+	public void setDate_creation(Date date_creation) {
+		this.date_creation = date_creation;
+	}
+
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
 	
 
 }

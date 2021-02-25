@@ -8,6 +8,7 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import com.uqac.entities.User;
+import com.uqac.utils.TransactionManager;
 
 
 public class UserDao extends DAO<User>{
@@ -15,12 +16,10 @@ public class UserDao extends DAO<User>{
 	public static User userConnected=null;
 	
 	@Override
-	public User find(long id) {
-		EntityManagerFactory emf = Singleton.getEntityManagetFactory();
-		EntityManager em = emf.createEntityManager(); 
-		em.getTransaction().begin();
-		User u = em.find(User.class, id); 
-		em.getTransaction().commit();
+	public User find(Long id) {
+		
+		User u = TransactionManager.getEm().find(User.class, id); 
+		
 		return u;
 	}
 
@@ -34,12 +33,10 @@ public class UserDao extends DAO<User>{
 
 	@Override
 	public User create(User obj) {
-		EntityManagerFactory emf = Singleton.getEntityManagetFactory();
-		EntityManager em = emf.createEntityManager(); 
-		em.getTransaction().begin();
-		em.persist(obj);
-		Query query=em.createQuery("select t from User t order by t.id desc");
-		em.getTransaction().commit();
+		
+		TransactionManager.getEm().persist(obj);
+		Query query=TransactionManager.getEm().createQuery("select t from User t order by t.id desc");
+		
 		return (User) query.getResultList().get(0);
 		
 	}
@@ -47,31 +44,26 @@ public class UserDao extends DAO<User>{
 	@Override
 	public User update(User obj) {
 		// TODO Auto-generated method stub
-		EntityManagerFactory emf = Singleton.getEntityManagetFactory();
-		EntityManager em = emf.createEntityManager(); 
-		em.getTransaction().begin();
-		em.merge(obj);
-		em.getTransaction().commit();
+		
+		TransactionManager.getEm().merge(obj);
+		
 		return obj;
 	}
 
 	@Override
 	public void delete(User obj) {
 		// TODO Auto-generated method stub
-		EntityManagerFactory emf = Singleton.getEntityManagetFactory();
-		EntityManager em = emf.createEntityManager(); 
-		em.getTransaction().begin();
-		obj =em.find(User.class, obj.getId());
-		em.remove(obj);
-		em.getTransaction().commit();
+		
+		obj =TransactionManager.getEm().find(User.class, obj.getId());
+		TransactionManager.getEm().remove(obj);
+		
 	}
 
 	@Override
 	public List<User> findAll() {
 		// TODO Auto-generated method stub
-		EntityManagerFactory emf = Singleton.getEntityManagetFactory();
-		EntityManager em = emf.createEntityManager();
-		Query query=em.createQuery("SELECT s FROM User s"); 
+		
+		Query query=TransactionManager.getEm().createQuery("SELECT s FROM User s"); 
 		List<User> list=(List<User>)query.getResultList(); 
 		return list;
 	}
@@ -79,9 +71,8 @@ public class UserDao extends DAO<User>{
 	@Override
 	public List<User> chercher(String mc) {
 		// TODO Auto-generated method stub
-		EntityManagerFactory emf = Singleton.getEntityManagetFactory();
-		EntityManager em = emf.createEntityManager(); 
-		Query query=em.createQuery("select t from User t where t.nom like :mc or t.prenom like :mp"); 
+		
+		Query query=TransactionManager.getEm().createQuery("select t from User t where t.nom like :mc or t.prenom like :mp"); 
 		query.setParameter("mc", mc);
 		query.setParameter("mp", mc);
 		return query.getResultList();
@@ -89,9 +80,8 @@ public class UserDao extends DAO<User>{
 	}
 	
 	public static User connexion(String login,String pwd) {
-		EntityManagerFactory emf = Singleton.getEntityManagetFactory();
-		EntityManager em = emf.createEntityManager(); 
-		Query query=em.createQuery("select t from User t where t.login=:log and t.password=:mp "); 
+		
+		Query query=TransactionManager.getEm().createQuery("select t from User t where t.login=:log and t.password=:mp "); 
 		query.setParameter("log", login);
 		query.setParameter("mp", pwd);
 		try {
