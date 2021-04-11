@@ -240,10 +240,10 @@ public class UserListeController implements Initializable{
 	}
 	
 	private void remplirChamp() {
-		nomf.textProperty().set(userSelected.getNom());
-		prenomf.textProperty().set(userSelected.getPrenom());
+		//nomf.textProperty().set(userSelected.getNom());
+		//prenomf.textProperty().set(userSelected.getPrenom());
 		telephonef.textProperty().set(userSelected.getTelephone());
-		emailf.textProperty().set(userSelected.getEmail());
+		//emailf.textProperty().set(userSelected.getEmail());
 		date_naissf.setValue(Instant.ofEpochMilli(userSelected.getDate_naiss().getTime())
 			      .atZone(ZoneId.systemDefault())
 			      .toLocalDate());
@@ -267,10 +267,10 @@ public class UserListeController implements Initializable{
 	
 	private User recupererChamp() {
 		User user = new User();
-		user.setNom(nomf.getText());
-		user.setPrenom(prenomf.getText());
+		//user.setNom(nomf.getText());
+		//user.setPrenom(prenomf.getText());
 		user.setTelephone(telephonef.getText());
-		user.setEmail(emailf.getText());
+		//user.setEmail(emailf.getText());
 		user.setDate_naiss(java.sql.Date.valueOf(date_naissf.getValue()));
 		user.setAdresse(adressef.getText());
 		user.setRole(rolef.getValue().toString());
