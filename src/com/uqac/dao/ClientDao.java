@@ -65,7 +65,7 @@ public class ClientDao extends DAO<Client>{
 	public List<Client> chercher(String mc) {
 		// TODO Auto-generated method stub
 		
-		Query query=TransactionManager.getEm().createQuery("select t from Client t where t.user.nom like :mc or t.user.prenom like :mp"); 
+		Query query=TransactionManager.getEm().createQuery("select t from Client t where t.nom like :mc or t.prenom like :mp"); 
 		query.setParameter("mc", mc);
 		query.setParameter("mp", mc);
 		return query.getResultList();

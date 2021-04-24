@@ -13,13 +13,16 @@ public class Client {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
+	private String nom;
+	private String prenom;
+	private String adresse;
+	private String telephone;
+	private Date date_naiss;
 	
 	@OneToOne(targetEntity=Compte.class,optional=false, mappedBy="client")
 	private Compte compte;
 	
-	@OneToOne(targetEntity=User.class,optional=false, mappedBy="client")
-	private User user;
-
+	
 	public long getId() {
 		return id;
 	}
@@ -36,13 +39,45 @@ public class Client {
 		this.compte = compte;
 	}
 
-	public User getUser() {
-		return user;
+	public String getNom() {
+		return nom;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
-	
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	public String getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+
+	public String getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+
+	public Date getDate_naiss() {
+		return date_naiss;
+	}
+
+	public void setDate_naiss(Date date_naiss) {
+		this.date_naiss = date_naiss;
+	}
+
 	
 }

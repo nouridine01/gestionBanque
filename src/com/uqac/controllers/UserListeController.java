@@ -240,7 +240,7 @@ public class UserListeController implements Initializable{
 	}
 	
 	private void remplirChamp() {
-		nomf.textProperty().set(userSelected.getNom());
+		/*nomf.textProperty().set(userSelected.getNom());
 		prenomf.textProperty().set(userSelected.getPrenom());
 		telephonef.textProperty().set(userSelected.getTelephone());
 		emailf.textProperty().set(userSelected.getEmail());
@@ -250,7 +250,7 @@ public class UserListeController implements Initializable{
 		adressef.textProperty().set(userSelected.getAdresse());
 		rolef.setValue(userSelected.getRole());
 		loginf.textProperty().set(userSelected.getLogin());
-		passwordf.textProperty().set(userSelected.getPassword());
+		passwordf.textProperty().set(userSelected.getPassword());*/
 	}
 	
 	private void viderChamp() {
@@ -267,7 +267,7 @@ public class UserListeController implements Initializable{
 	
 	private User recupererChamp() {
 		User user = new User();
-		user.setNom(nomf.getText());
+		/*user.setNom(nomf.getText());
 		user.setPrenom(prenomf.getText());
 		user.setTelephone(telephonef.getText());
 		user.setEmail(emailf.getText());
@@ -275,7 +275,7 @@ public class UserListeController implements Initializable{
 		user.setAdresse(adressef.getText());
 		user.setRole(rolef.getValue().toString());
 		user.setLogin(loginf.getText());
-		user.setPassword(passwordf.getText());
+		user.setPassword(passwordf.getText());*/
 		return user;
 	}
 }

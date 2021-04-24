@@ -14,6 +14,7 @@ public class TransactionManager implements ITransactionManager {
 		return em;
 	}
 
+	//before
 	@Override
 	public EntityTransaction getEntityTransaction() {
 		// TODO Auto-generated method stub
@@ -23,6 +24,7 @@ public class TransactionManager implements ITransactionManager {
 		return em.getTransaction();
 	}
 
+	//after
 	@Override
 	public void commit(EntityTransaction t) {
 		// TODO Auto-generated method stub
@@ -30,6 +32,7 @@ public class TransactionManager implements ITransactionManager {
 		em.close();
 	}
 
+	//after error
 	@Override
 	public void rollback(EntityTransaction t) {
 		// TODO Auto-generated method stub

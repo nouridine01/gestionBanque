@@ -44,9 +44,7 @@ public class UserDao extends DAO<User>{
 	@Override
 	public User update(User obj) {
 		// TODO Auto-generated method stub
-		
-		TransactionManager.getEm().merge(obj);
-		
+		TransactionManager.getEm().merge(obj);	
 		return obj;
 	}
 
@@ -62,7 +60,6 @@ public class UserDao extends DAO<User>{
 	@Override
 	public List<User> findAll() {
 		// TODO Auto-generated method stub
-		
 		Query query=TransactionManager.getEm().createQuery("SELECT s FROM User s"); 
 		List<User> list=(List<User>)query.getResultList(); 
 		return list;
