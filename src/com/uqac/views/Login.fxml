@@ -5,50 +5,26 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="459.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="noor.esmt.controllers.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="577.0" style="-fx-background-color: #1c1918;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane layoutX="105.0" layoutY="26.0" pickOnBounds="false" prefHeight="350.0" prefWidth="250.0" style="-fx-background-color: white;">
+      <AnchorPane layoutX="288.0" layoutY="-4.0" prefHeight="407.0" prefWidth="289.0" style="-fx-background-color: #056287;">
          <children>
-            <ImageView fitHeight="93.0" fitWidth="138.0" layoutX="67.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <TextField layoutX="67.0" layoutY="151.0" promptText="Login" />
+            <PasswordField layoutX="67.0" layoutY="213.0" promptText="Password" />
+            <Button layoutX="67.0" layoutY="281.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #E45652;" text="Sign In" textFill="#dad6d6" />
+            <ImageView fitHeight="114.0" fitWidth="90.0" layoutX="97.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../images/login.png" />
+                  <Image url="@../../../images/avatar.png" />
                </image>
             </ImageView>
-            <VBox layoutX="35.0" layoutY="139.0" prefHeight="121.0" prefWidth="181.0" style="-fx-background-radius: 5; -fx-border-radius: 5;">
-               <children>
-                  <HBox alignment="CENTER" prefHeight="47.0" prefWidth="181.0">
-                     <children>
-                        <ImageView fitHeight="28.0" fitWidth="32.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../images/mail.png" />
-                           </image>
-                        </ImageView>
-                        <TextField id="login" fx:id="login" promptText="LOGIN" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="49.0" prefWidth="181.0">
-                     <children>
-                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../images/pwd.jpg" />
-                           </image>
-                        </ImageView>
-                        <PasswordField fx:id="pwd" prefHeight="25.0" prefWidth="149.0" promptText="PASSWORG" />
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-            <Button fx:id="sign" alignment="CENTER" layoutX="88.0" layoutY="276.0" mnemonicParsing="false" onAction="#signin" style="-fx-background-color: green; -fx-font-size: 15; -fx-text-fill: white;" text="SIGN-IN" />
          </children>
-      </Pane>
-      <Pane prefHeight="25.0" prefWidth="34.0">
-         <children>
-            <Button fx:id="quitter" mnemonicParsing="false" onAction="#quitter" prefHeight="25.0" prefWidth="34.0" />
-         </children>
-      </Pane>
+      </AnchorPane>
+      <ImageView fitHeight="407.0" fitWidth="290.0" layoutX="-1.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/LoginImages.jpg" />
+         </image>
+      </ImageView>
    </children>
-</Pane>
+</AnchorPane>

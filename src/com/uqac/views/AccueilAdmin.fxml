@@ -9,18 +9,21 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="369.0" prefWidth="522.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="noor.esmt.controllers.AccueilAdminController">
+<Pane prefHeight="369.0" prefWidth="522.0" style="-fx-background-color: #056287;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="noor.esmt.controllers.AccueilAdminController">
    <children>
-      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="522.0" style="-fx-padding: 0;">
+      <MenuBar layoutX="1.0" prefHeight="27.0" prefWidth="522.0" style="-fx-padding: 0;">
          <menus>
-            <Menu mnemonicParsing="false" text="USER">
+            <Menu mnemonicParsing="false" text="GESTION USERS">
                <items>
-                  <MenuItem fx:id="listerUser" mnemonicParsing="false" onAction="#listerUser" text="LISTE" />
+                  <MenuItem mnemonicParsing="false" text="Gestion Agents" />
+                  <MenuItem mnemonicParsing="false" text="Gestion Clients" />
                </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="IMMOBILIER">
+            <Menu mnemonicParsing="false" text="TRANSACTIONS">
                <items>
-                  <MenuItem fx:id="listerImmobilier" mnemonicParsing="false" onAction="#listerImmobilier" text="LISTE" />
+                  <MenuItem fx:id="listerImmobilier" mnemonicParsing="false" onAction="#listerImmobilier" text="Virement" />
+                  <MenuItem mnemonicParsing="false" text="Versement" />
+                  <MenuItem mnemonicParsing="false" text="Retrait" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="LOG-OUT">
@@ -30,19 +33,19 @@
             </Menu>
          </menus>
       </MenuBar>
-      <Label layoutX="108.0" layoutY="60.0" prefHeight="20.0" prefWidth="307.0" text="BIENVENUE SUR LA PAGE  D'ADMINISTRATION">
+      <Label layoutX="108.0" layoutY="60.0" prefHeight="20.0" prefWidth="307.0" text="BIENVENUE SUR LA PAGE  D'ADMINISTRATION" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="40.0" layoutY="322.0" prefHeight="27.0" prefWidth="454.0" text="SMART-HOUSE pour une gestion plus sur de vos biens Immobiliers.">
+      <Label layoutX="115.0" layoutY="322.0" prefHeight="27.0" prefWidth="379.0" text="KNP Bank Vos ambitions sont les nôtres " textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <ImageView fitHeight="168.0" fitWidth="239.0" layoutX="147.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="191.0" fitWidth="329.0" layoutX="116.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../images/accueil_admin.jpg" />
+            <Image url="@../../../images/bank-icon-with-circuit-background-concept_41921-12.jpg" />
          </image>
       </ImageView>
    </children>
