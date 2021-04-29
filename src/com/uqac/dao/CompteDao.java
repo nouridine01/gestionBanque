@@ -2,10 +2,10 @@ package com.uqac.dao;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
+//import javax.persistence.EntityManager;
+//import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
-import javax.transaction.Transactional;
+//import javax.transaction.Transactional;
 
 import com.uqac.entities.Compte;
 import com.uqac.utils.TransactionManager;
@@ -57,10 +57,12 @@ public class CompteDao extends DAO<Compte>{
 		// TODO Auto-generated method stub
 		
 		Query query=TransactionManager.getEm().createQuery("SELECT s FROM Compte s"); 
+		@SuppressWarnings("unchecked")
 		List<Compte> list=(List<Compte>)query.getResultList(); 
 		return list;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Compte> chercher(String mc) {
 		// TODO Auto-generated method stub

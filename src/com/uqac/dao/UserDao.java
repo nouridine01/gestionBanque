@@ -2,10 +2,10 @@ package com.uqac.dao;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
+//import javax.persistence.EntityManager;
+//import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
-import javax.transaction.Transactional;
+//import javax.transaction.Transactional;
 
 import com.uqac.entities.User;
 import com.uqac.utils.TransactionManager;
@@ -57,6 +57,7 @@ public class UserDao extends DAO<User>{
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> findAll() {
 		// TODO Auto-generated method stub
@@ -65,6 +66,7 @@ public class UserDao extends DAO<User>{
 		return list;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> chercher(String mc) {
 		// TODO Auto-generated method stub

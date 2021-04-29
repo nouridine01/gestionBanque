@@ -50,7 +50,7 @@ public class App extends Application {
 		// TODO Auto-generated method stub
 		primary=primaryStage;
 		primary.setTitle("Login");
-		Parent root =  new FXMLLoader(getClass().getResource("views/login.fxml")).load();
+		Parent root =  new FXMLLoader(getClass().getResource("views/Login.fxml")).load();
 		//Parent root =  new FXMLLoader(getClass().getResource("views/AccueilManager.fxml")).load();
 		Scene scene = new Scene(root);
 		primaryStage.setScene(scene);

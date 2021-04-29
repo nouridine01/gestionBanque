@@ -2,13 +2,13 @@ package com.uqac.dao;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
+//import javax.persistence.EntityManager;
+//import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
-import javax.transaction.Transactional;
+//import javax.transaction.Transactional;
 
 import com.uqac.entities.Client;
-import com.uqac.entities.User;
+//import com.uqac.entities.User;
 import com.uqac.utils.TransactionManager;
 
 
@@ -57,10 +57,12 @@ public class ClientDao extends DAO<Client>{
 		// TODO Auto-generated method stub
 		
 		Query query=TransactionManager.getEm().createQuery("SELECT s FROM Client s"); 
+		@SuppressWarnings("unchecked")
 		List<Client> list=(List<Client>)query.getResultList(); 
 		return list;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Client> chercher(String mc) {
 		// TODO Auto-generated method stub
